@@ -1,0 +1,31 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each notas}}
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title d-flex justify-content-between">
+                    {{title}}<a href="/notas/edit/{{id}}"><i class="fa fa-pencil"></i></a>
+                    </h4>
+                    <p>{{description}}</p>
+                    <p>{{timeago created_at}}</p>
+                    <form action="/notas/delete/{{id}} "method="GET">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger btn-block btn-sm">
+                            DELETE
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>!NO HAY NOTAS AUN EN LA BASE DE DATOS!</p>
+                <a href="/notas/add">CREA UNA NOTA</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

@@ -2,6 +2,11 @@ const express = require('express');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path'); 
+const flash = require ('connect-flash');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session');
+
+const {database} = require('./keys');
 
 // initializations
 const app = express();
@@ -22,13 +27,21 @@ app.set('view engine', '.hbs');
 
 
 // middlewares es un software que se sitúa entre un sistema operativo y las aplicaciones que se ejecutan en él
+app.use(session({
+    secret: 'mysqlnodejs',
+    resave: false,
+    saveUninitialized: false,
+    store: new MySQLStore(database)
+}));
+app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
+
 // Global Variables, variables globales hay que definirlas rutas
 app.use((req, res, next)=> {
-
+    app.locals.success = req.flash('success');
     next();
 });
 
