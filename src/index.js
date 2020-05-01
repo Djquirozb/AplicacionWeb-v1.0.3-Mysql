@@ -5,11 +5,14 @@ const path = require('path');
 const flash = require ('connect-flash');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session');
+const passport = require('passport')
+
 
 const {database} = require('./keys');
 
 // initializations
 const app = express();
+require('./lib/passport');
 
 
 
@@ -33,15 +36,19 @@ app.use(session({
     saveUninitialized: false,
     store: new MySQLStore(database)
 }));
-app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-
+app.use(passport.initialize()); // el middlewares, tiene que ir despues de session por el usa sus recursos
+app.use(passport.session());
+app.use(flash());
 
 // Global Variables, variables globales hay que definirlas rutas
 app.use((req, res, next)=> {
     app.locals.success = req.flash('success');
+    res.locals.error_msg =req.flash('error_msg');
+    res.locals.error =req.flash('error');
+    res.locals.user = req.user || null;
     next();
 });
 

@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About</a>
@@ -26,8 +26,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/analisis">Todos Los Analisis</a>
                         <a class="dropdown-item" href="/Analisis/nuevo">Nuevo Analisis</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/users/logout">Salir</a>
+                        <div class="dropdown-divider"></div>                        
                     </div>
                 </li>
                 </li> <!--esta es la seccion del encabezado de la pagina-->
@@ -37,18 +36,27 @@
                         Notas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/notes">Todas Las Notas</a>
-                        <a class="dropdown-item" href="/notes/add">Agregar Notas</a>
+                        <a class="dropdown-item" href="/notas">Todas Las Notas</a>
+                        <a class="dropdown-item" href="/notas/add">Agregar Notas</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/users/logout">Salir</a>
+                </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Perfil
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/profile">Entrada</a>                       
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout">Cerrar Sesion</a>
                     </div>
                 </li>
                 {{else}} <!--si no existe un usuario, muestrale la pestaña de login y register para que pueda ingresar, este es el fin de la condicional de handebals-->
                 <li class="nav-item">
-                    <a href="/users/signin" class="nav-link">Login</a> <!--esta linea se enlasa con la pagina donde tenemos el ingreso "signin.hbs -->
+                    <a href="/signin" class="nav-link">Login</a> <!--esta linea se enlasa con la pagina donde tenemos el ingreso "signin.hbs -->
                 </li>
                 <li class="nav-item">
-                    <a href="/users/signup" class="nav-link">Register</a>
+                    <a href="/signup" class="nav-link">Register</a>
                 </li>
                 {{/if}} <!--fin de handelbals-->
             </ul>
