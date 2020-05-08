@@ -16,7 +16,7 @@ require('./lib/passport');
 
 
 
-// settings
+// settings servidor
 app.set('port', process.env.PORT || 4000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
@@ -57,6 +57,7 @@ app.use((req, res, next)=> {
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
 app.use('/Notas' ,require('./routes/Notas'));
+app.use('/Analisis' , require('./routes/Analisis'));
 
 // publicas
 app.use(express.static(path.join(__dirname, 'public')));
