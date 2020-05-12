@@ -1,7 +1,117 @@
 body {
-	background: #1488cc; /* defino el color del fondo  */	
-	overflow: hidden;
+	background: black; /* defino el color del fondo  */		
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23540606' fill-opacity='0.4'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	overflow: hidden;	
 }
+
+/* estilos de la navegacion  */
+
+/* boton de navegacion pantalla minimizada recogido  */
+.navbar-toggler{
+    width: 47px;
+    height: 34px;
+    background-color: orangered;
+    border:none;
+}
+.navbar-toggler .line{
+    width: 100%;
+    float: left;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.navbar{
+	background: #F5F8FA;
+}
+
+/* quitar subrayado href */
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+.navprincipal {		
+	color: black;
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	padding: 10px;		
+}
+
+.navprincipal a:hover{
+	border-bottom: 3px solid #FFBCAC;
+}
+
+.nav-link{
+	color: black;
+}
+
+.hr1{
+	background-color: #FFF3EE;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+
+}
+
+.navbar-brand img{
+	width: 160px;
+}
+
+/* inicio estilos botones del navegador*/
+.navprincipalboton {		
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	font-style: normal;			
+}
+
+/* estilos botones de inicio sesion */
+
+.navprincipalboton .a-boton1{
+	color: #FF7A59;
+}
+
+.bts1 {	
+	border: 1px solid;
+	background-color: white;	
+	padding: 5px 20px;
+	font-size: 20px;
+	cursor: pointer;
+  }  
+  
+  .success1 {
+	border-color: orange;
+	color: orange;
+  }
+  
+  .success1:hover {
+	background-color: #FFF1EE;
+	color: white;
+  }
+
+  /* estilos botones de registro */
+  .navprincipalboton .a-boton{
+	color: white;
+}
+  .bts {	
+	border: 1px solid;
+	background-color: #FF7A59;	
+	padding: 5px 20px;
+	font-size: 20px;
+	cursor: pointer;
+  }
+  
+  .success {
+	border-color: orange;
+	color: orange;
+  }
+  
+  .success:hover {
+	background-color: #FFBCAC;
+	color: white;
+  }
+
+/* fin estilos botones del navegador*/
 
 .index{
 	width: 100vw;
@@ -9,17 +119,39 @@ body {
 }
 
 /* detalles de la imagen index  */
-.masthead{
-	color: whitesmoke;
-	min-height: 30rem;
+
+.showcase{
 	width: 100%;
-	height: 100%;
-	padding-top: 8rem;
-	background: url('/img/background.jpg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	color: white;	
+	height: 450px;
+	background: url('../img/imag1.jpg') no-repeat center center/cover;
+	padding-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	text-align: center;
 }
+
+.showcase .aa {
+	cursor: pointer;
+	display: inline-block;
+	border: 0;
+	font-weight: bold;
+	padding: 10px 20px;		
+	background: #262626;
+	color: white;
+	font-size: 15px;
+	border: 1px solid white;
+	margin: 10px 0;
+}
+
+.aa:hover {
+	opacity: .9;
+
+}
+
+
 
 .masthea h1{
 	font-size: 4rem;
@@ -36,7 +168,7 @@ body {
     width: 30%; /* defino el tamaño del logo de la pagina signin  */
 }
 
-/* configuracion del menu lateral en analisis  */
+/* inicio configuracion del menu lateral en analisis  */
 :root{
 	--width: 300px;
 	--padding: 10px;
@@ -212,8 +344,9 @@ body {
 	width: 100px;	
 }
 
+/* fin configuracion del menu lateral en analisis  */
 
-/* alinear y estilos de compra Conciente el contenido */
+/* inicio alinear y estilos de compra Conciente el contenido */
 .container-portada{		
 	overflow-y: scroll;
 	width: 100%;
@@ -278,6 +411,7 @@ body {
 	border: black 1px solid;	
 }
 
+/* fin alinear y estilos de compra Conciente el contenido */
 
 
 
